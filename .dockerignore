@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Project specifics (do not ignore data.csv and model.joblib because they are needed for running the app, unless downloaded externally)
+# data.csv
+# model.joblib
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+Dockerfile
+.dockerignore
