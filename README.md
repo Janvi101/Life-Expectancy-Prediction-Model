@@ -1,58 +1,89 @@
-# Life Expectancy Prediction System
+# 🌟 Life Expectancy AI
 
-This project is a machine learning web application that predicts a country's life expectancy based on key socio-economic and health factors. It uses a Linear Regression model trained on WHO data, wrapped in a Flask backend with a modern, glassmorphism UI.
+![Life Expectancy AI Banner](banner.png)
 
-## Local Setup
+## 📖 Overview
 
-1. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+**Life Expectancy AI** is a state-of-the-art machine learning web application designed to predict a country's life expectancy based on key socio-economic and health indicators. Built with a sleek **glassmorphism** UI and a robust **Flask** backend, this tool leverages global health data to provide instant, data-driven insights.
 
-2. **Train the model (Optional):**
-   If you want to retrain the model, run:
-   ```bash
-   python train.py
-   ```
+## 🚀 Key Features
 
-3. **Run the web application:**
-   ```bash
-   python app.py
-   ```
-   Then navigate to `http://localhost:5000` in your web browser.
+The model analyzes several critical factors to generate its predictions:
 
-## Deployment Instructions
+-   📚 **Schooling:** Average number of years of education.
+-   💰 **Income Composition:** Human Development Index in terms of resource composition.
+-   📉 **Adult Mortality:** Probability of dying between 15 and 60 years per 1000 population.
+-   💪 **BMI:** Average Body Mass Index of the entire population.
+-   🍷 **Alcohol:** Per capita (15+) consumption (in liters of pure alcohol).
+-   💉 **Polio:** Polio (Pol3) immunization coverage among 1-year-olds (%).
+-   📈 **GDP:** Gross Domestic Product per capita (in USD).
 
-### Docker (Recommended for Universal Deployment)
-You can easily deploy the application anywhere using Docker.
-1. Build the Docker image:
-   ```bash
-   docker build -t life-expectancy-app .
-   ```
-2. Run the Docker container:
-   ```bash
-   docker run -d -p 5000:5000 life-expectancy-app
-   ```
-3. Open your browser and navigate to `http://localhost:5000`.
+## 🛠️ Tech Stack
 
-### Render (Recommended for Free Hosting)
-1. Push this code to a GitHub repository.
-2. Sign up on [Render](https://render.com) and create a new **Web Service**.
-3. Connect your GitHub repository.
-4. Set the **Build Command** to: `pip install -r requirements.txt`
-5. Set the **Start Command** to: `gunicorn app:app`
-6. Click **Create Web Service**.
+-   **Backend:** [Flask](https://flask.palletsprojects.com/) (Python)
+-   **Machine Learning:** [Scikit-learn](https://scikit-learn.org/), [Pandas](https://pandas.pydata.org/), [Joblib](https://joblib.readthedocs.io/)
+-   **Frontend:** HTML5, CSS3 (Glassmorphism design), JavaScript
+-   **Deployment:** Docker, Gunicorn, Heroku/Render support
 
-### Heroku
-1. Install the Heroku CLI and login.
-2. Run `heroku create` in the project directory.
-3. Push to Heroku: `git push heroku master`
-4. Scale the dyno: `heroku ps:scale web=1`
-5. Open your app: `heroku open`
+## 💻 Local Setup
 
-## Features Used
-- **Schooling:** Number of years of Schooling.
-- **Income Composition:** Human Development Index in terms of income composition of resources (index ranging from 0 to 1).
-- **Adult Mortality:** Adult Mortality Rates of both sexes (probability of dying between 15 and 60 years per 1000 population).
-- **HIV/AIDS:** Deaths per 1000 live births HIV/AIDS (0-4 years).
-- **BMI:** Average Body Mass Index of entire population.
+Get the project running on your local machine in minutes:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/Life-Expectancy-Prediction-Model.git
+    cd Life-Expectancy-Prediction-Model
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Train the model (Optional):**
+    ```bash
+    python train.py
+    ```
+
+4.  **Run the application:**
+    ```bash
+    python app.py
+    ```
+    Visit `http://localhost:5000` in your browser.
+
+## 🐳 Docker Deployment
+
+For a consistent environment across any platform:
+
+1.  **Build the image:**
+    ```bash
+    docker build -t life-expectancy-ai .
+    ```
+
+2.  **Launch the container:**
+    ```bash
+    docker run -d -p 5000:5000 life-expectancy-ai
+    ```
+
+## 🌐 Cloud Deployment
+
+### Render / Heroku
+-   **Build Command:** `pip install -r requirements.txt`
+-   **Start Command:** `gunicorn app:app`
+
+## 📂 Project Structure
+
+```text
+├── app.py              # Flask server & API routes
+├── train.py            # Model training & evaluation script
+├── data.csv            # WHO Life Expectancy dataset
+├── model.joblib        # Trained Scikit-learn model
+├── Dockerfile          # Container configuration
+├── Procfile            # Deployment script for Heroku
+├── requirements.txt    # Python dependencies
+├── static/             # CSS and JavaScript assets
+└── templates/          # HTML templates (index.html)
+```
+
+---
+*Developed with ❤️ for global health data analysis.*
